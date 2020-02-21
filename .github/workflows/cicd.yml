@@ -1,0 +1,32 @@
+name: Build, Test and Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup node 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    
+    - name: Install
+      run: npm ci
+
+    - name: Build
+      if: success()
+      run: npm run build
+
+    - name: Deploy
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.ACCESS_TOKEN }}
+        publish_dir: ./public

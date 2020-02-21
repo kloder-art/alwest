@@ -8,29 +8,25 @@ import Menu from './Menu';
 const StyledHeader = styled.header`
   background: rebeccapurple;
   margin-bottom: 1.45rem;
-  
-  .container {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
+  padding: 1rem 1.0875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    a.home {
-      color: white;
-      text-decoration: none;
-    }
+  a.home {
+    color: white;
+    text-decoration: none;
   }
 `;
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <div className={'container'}>
-      <h1 style={{ margin: 0 }}>
-        <Link to={'/'} className={'home'}>
-          {siteTitle}
-        </Link>
-      </h1>
-      <Menu />
-    </div>
+    <h1 style={{ margin: 0 }}>
+      <Link to={'/'} className={'home'}>
+        {siteTitle}
+      </Link>
+    </h1>
+    <Menu />
   </StyledHeader>
 );
 

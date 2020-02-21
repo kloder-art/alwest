@@ -3,28 +3,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFilmShelf = styled.div`
-  &{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 16px 16px;
-    justify-items: center;
-    align-items: center;
-  }
-
-  @media (max-width: 480px) {
-    &{
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 8px 8px;
-    }
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
 `;
 
-const FilmShelf = (props) => {
-  return (
-    <StyledFilmShelf>
-      {props.children}
-    </StyledFilmShelf>
-  );
+const FilmShelf = props => {
+  return <StyledFilmShelf>{props.children}</StyledFilmShelf>;
 };
 
 FilmShelf.propTypes = {

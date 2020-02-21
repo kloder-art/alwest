@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/alwest',
   siteMetadata: {
     title: 'Almeria Films',
     description: 'Peliculas de Almería.',
@@ -18,8 +19,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: true
-      }
+        linkStyles: true,
+      },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-json',

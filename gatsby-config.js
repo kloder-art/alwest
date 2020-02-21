@@ -23,37 +23,35 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-transformer-remark',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
+        plugins: ['gatsby-remark-embedder'],
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'films',
-        path: `${__dirname}/src/data/films/`,
+        path: `${__dirname}/data/films/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'locations',
-        path: `${__dirname}/src/data/locations/`,
+        path: `${__dirname}/data/locations/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'staff',
-        path: `${__dirname}/src/data/staff/`,
+        path: `${__dirname}/data/staff/`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

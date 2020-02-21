@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/alwest',
   siteMetadata: {
-    title: 'Almeria Films',
-    description: 'Peliculas de Almería.',
-    author: '@kloder',
+    title: 'AlWest',
+    description: 'Almería Media Collection',
+    author: 'Javier López Úbeda <jlopezcur@gmail.com>',
   },
   mapping: {
     'FilmsJson.locations': 'LocationsJson.slug',

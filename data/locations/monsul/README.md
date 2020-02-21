@@ -1,6 +1,6 @@
 ---
 id: monsul
-title: Playa de Mónsul
+name: Playa de Mónsul
 lat: 36.7307695
 lon: -2.1477006
 wikipedia: https://es.wikipedia.org/wiki/Ensenada_de_M%C3%B3nsul

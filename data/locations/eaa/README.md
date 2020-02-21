@@ -1,6 +1,6 @@
 ---
-slug: eaa
-title: Escuela de Artes de Almería (EAA)
+id: eaa
+name: Escuela de Artes de Almería (EAA)
 lat: 6.8370
 lon: 2.4642
 wikipedia: https://es.wikipedia.org/wiki/Escuela_de_Arte_de_Almer%C3%ADa

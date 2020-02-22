@@ -26,7 +26,7 @@ export const query = graphql`
   query {
     allFile(
       filter: { sourceInstanceName: { eq: "film" }, extension: { eq: "md" } }
-      sort: { fields: [childMarkdownRemark___frontmatter___year], order: DESC }
+      sort: { fields: childMarkdownRemark___frontmatter___year, order: DESC }
     ) {
       edges {
         node {
@@ -36,7 +36,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  resize(width: 250, height: 320, fit: COVER) {
+                  resize(width: 250, height: 400, fit: COVER, quality: 50) {
                     src
                   }
                 }

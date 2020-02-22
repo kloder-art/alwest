@@ -16,9 +16,11 @@ const StyledFilms = styled.div`
 
 const Films = ({ items }) => (
   <StyledFilms>
-    {items.map(x => (
-      <Item {...x.frontmatter} key={x.frontmatter.id} />
-    ))}
+    {items
+      .filter(x => !!x)
+      .map(x => (
+        <Item {...x.frontmatter} key={x.frontmatter.id} />
+      ))}
   </StyledFilms>
 );
 

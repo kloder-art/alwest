@@ -17,9 +17,11 @@ const StyledStaff = styled.div`
 const Staff = ({ items }) => {
   return (
     <StyledStaff>
-      {items.map(x => (
-        <Item {...x.frontmatter} key={x.frontmatter.id} />
-      ))}
+      {items
+        .filter(x => !!x)
+        .map(x => (
+          <Item {...x.frontmatter} key={x.frontmatter.id} />
+        ))}
     </StyledStaff>
   );
 };

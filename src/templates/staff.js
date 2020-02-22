@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, withPrefix } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Films from '../components/films/Films';
@@ -16,7 +16,7 @@ const Staff = ({ data }) => {
       </p>
 
       <img
-        src={withPrefix(frontmatter.picture.childImageSharp.original.src)}
+        src={frontmatter.picture.childImageSharp.original.src}
         alt={frontmatter.name}
         style={{ maxHeight: '320px' }}
       />

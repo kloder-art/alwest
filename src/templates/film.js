@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, withPrefix } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Map from '../components/locations/Map';
@@ -16,7 +16,7 @@ const Film = ({ data }) => {
       <Tags frontmatter={frontmatter} />
 
       <img
-        src={withPrefix(frontmatter.poster.childImageSharp.original.src)}
+        src={frontmatter.poster.childImageSharp.original.src}
         alt={frontmatter.title}
         style={{ maxHeight: '320px' }}
       />

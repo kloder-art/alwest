@@ -8,7 +8,7 @@ import Staff from '../components/staff/Staff';
 import Films from '../components/films/Films';
 import Slider from '../components/locations/Slider';
 import SEO from '../components/SEO';
-import Tags from '../components/films/Tags';
+import Meta from '../components/Meta';
 import Container from '../components/Container';
 
 const Location = ({ data }) => {
@@ -20,7 +20,7 @@ const Location = ({ data }) => {
 
       <Container>
         <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
-        <Tags frontmatter={frontmatter} />
+        <Meta frontmatter={frontmatter} />
 
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </Container>

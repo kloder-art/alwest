@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Films from '../components/films/Films';
 import Map from '../components/locations/Map';
 import SEO from '../components/SEO';
-import Tags from '../components/films/Tags';
+import Meta from '../components/Meta';
 import Container from '../components/Container';
 
 const Staff = ({ data }) => {
@@ -16,7 +16,7 @@ const Staff = ({ data }) => {
       <SEO title={frontmatter.name} />
       <Container>
         <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
-        <Tags frontmatter={frontmatter} />
+        <Meta frontmatter={frontmatter} />
 
         <img
           src={frontmatter.picture.childImageSharp.original.src}

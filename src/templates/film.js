@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Map from '../components/locations/Map';
 import Staff from '../components/staff/Staff';
-import Tags from '../components/films/Tags';
+import Meta from '../components/Meta';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 
@@ -16,7 +16,7 @@ const Film = ({ data }) => {
       <SEO title={frontmatter.title} />
       <Container>
         <h2 style={{ marginBottom: 0 }}>{frontmatter.title}</h2>
-        <Tags frontmatter={frontmatter} />
+        <Meta frontmatter={frontmatter} />
 
         <img
           src={frontmatter.poster.childImageSharp.original.src}

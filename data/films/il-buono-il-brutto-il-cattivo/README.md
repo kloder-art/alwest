@@ -9,6 +9,9 @@ poster: poster.jpg
 locations:
 staff:
   - sergio-leone
+  - clint-eastwood
+  - eli-wallach
+  - lee-van-cleef
 ---
 
 ## Sinopsis

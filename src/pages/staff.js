@@ -3,22 +3,30 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import StaffItem from '../components/StaffItem';
-import StaffShelf from '../components/StaffShelf';
+import Staff from '../components/staff/Staff';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query Staff {
-      allStaffJson (
-        sort: {
-          fields: [title]
-          order: ASC
-        }
+    query {
+      allFile(
+        filter: { sourceInstanceName: { eq: "staff" }, extension: { eq: "md" } }
+        sort: { fields: [childMarkdownRemark___frontmatter___name], order: ASC }
       ) {
         edges {
           node {
-            title,
-            slug
+            childMarkdownRemark {
+              frontmatter {
+                id
+                name
+                picture {
+                  childImageSharp {
+                    original {
+                      src
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -27,11 +35,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <StaffShelf>
-        {data.allStaffJson.edges.map(x => (
-          <StaffItem {...x.node} key={x.node.slug} />
-        ))}
-      </StaffShelf>
+      <Staff items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
     </Layout>
   );
 };

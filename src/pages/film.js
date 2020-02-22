@@ -6,18 +6,18 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Films from '../components/films/Films';
 
-const IndexPage = ({ data }) => (
+const FilmsPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Films items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
   </Layout>
 );
 
-IndexPage.propTypes = {
+FilmsPage.propTypes = {
   data: PropTypes.object,
 };
 
-export default IndexPage;
+export default FilmsPage;
 
 export const query = graphql`
   query {

@@ -1,14 +1,13 @@
 ---
 id: eaa
 name: Escuela de Artes de Almería (EAA)
-lat: 6.8370
-lon: 2.4642
+lat: 36.83704
+lon: -2.46426
 wikipedia: https://es.wikipedia.org/wiki/Escuela_de_Arte_de_Almer%C3%ADa
-films:
-  - indiana-jones-and-the-last-crusad
 images:
-  - eaa.jpg
-  - monsul.jpg"
+  - 01.jpg
+films:
+  - indiana-jones-and-the-last-crusade
 staff:
 ---
 

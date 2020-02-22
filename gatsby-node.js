@@ -1,37 +1,40 @@
 const path = require('path');
 
-// Taxonomies for detail pages
-const taxMap = {
-  'allFilmsJson': { component: 'Film.jsx', slugPrefix: 'films/' },
-  'allLocationsJson': { component: 'Location.jsx', slugPrefix: 'locations/' },
-  'allStaffJson': { component: 'Staff.jsx', slugPrefix: 'staff/' }
+const getPath = node =>
+  `${node.sourceInstanceName}/${node.childMarkdownRemark.frontmatter.id}`;
+
+const getComponent = node =>
+  path.resolve(`./src/templates/${node.sourceInstanceName}.js`);
+
+const processNode = createPage => ({ node }) => {
+  if (node.childMarkdownRemark) {
+    createPage({
+      path: getPath(node),
+      component: getComponent(node),
+      context: {
+        id: node.childMarkdownRemark.frontmatter.id,
+      },
+    });
+  }
 };
 
-const getGraphqlPromises = (graphql) => Object.keys(taxMap).map(x => graphql(`
-  {
-    ${x} {
-      edges {
-        node {
-          slug
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const result = await graphql(`
+    query {
+      allFile {
+        edges {
+          node {
+            sourceInstanceName
+            childMarkdownRemark {
+              frontmatter {
+                id
+              }
+            }
+          }
         }
       }
     }
-  }
-`));
-
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  return Promise.all(getGraphqlPromises(graphql)).then(results => {
-    results
-      .map(x => [x, Object.keys(x.data)])
-      .forEach(([x, y]) =>
-        x.data[y].edges.forEach(({ node }) => createPage({
-          path: taxMap[y].slugPrefix + node.slug,
-          component: path.resolve(`./src/templates/${taxMap[y].component}`),
-          context: {
-            slug: node.slug
-          },
-        }))
-      );
-  });
+  `);
+  result.data.allFile.edges.forEach(processNode(createPage));
 };

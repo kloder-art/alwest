@@ -11,7 +11,6 @@ const StyledMenu = styled.ul`
     margin-right: 16px;
 
     a {
-      color: white;
       text-decoration: none;
     }
     a.active {
@@ -23,12 +22,12 @@ const StyledMenu = styled.ul`
 const Menu = () => (
   <StyledMenu>
     <li>
-      <Link to="/" activeClassName={'active'}>
-        Home
+      <Link to="/film" activeClassName={'active'} partiallyActive={true}>
+        Films
       </Link>
     </li>
     <li>
-      <Link to="/locations" activeClassName={'active'} partiallyActive={true}>
+      <Link to="/location" activeClassName={'active'} partiallyActive={true}>
         Locations
       </Link>
     </li>

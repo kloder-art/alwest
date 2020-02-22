@@ -9,7 +9,7 @@ imdb: https://www.imdb.com/title/tt0097576/
 spotify: https://open.spotify.com/track/60ZYLVPmSNY9r0Uquaivvs?si=QkKlkTx9T5iDHPHH7pFyVQ
 poster: poster.jpg
 locations:
-  - eaa,
+  - eaa
   - monsul
 staff:
   - harrison-ford

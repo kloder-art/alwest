@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import Menu from './Menu';
 
 const StyledHeader = styled.header`
-  background: rebeccapurple;
   margin-bottom: 1.45rem;
   padding: 1rem 1.0875rem;
   display: flex;
@@ -14,7 +13,6 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 
   a.home {
-    color: white;
     text-decoration: none;
   }
 `;

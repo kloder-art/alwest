@@ -6,12 +6,9 @@ module.exports = {
     author: 'Javier López Úbeda <jlopezcur@gmail.com>',
   },
   mapping: {
-    'FilmsJson.locations': 'LocationsJson.slug',
-    'FilmsJson.staff': 'StaffJson.slug',
-    'LocationsJson.staff': 'StaffJson.slug',
-    'LocationsJson.films': 'FilmsJson.slug',
-    'StaffJson.films': 'FilmsJson.slug',
-    'StaffJson.locations': 'LocationsJson.slug',
+    'MarkdownRemark.frontmatter.locations': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.staff': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.films': 'MarkdownRemark.frontmatter.id',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -20,6 +17,16 @@ module.exports = {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
         linkStyles: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Rye',
+          },
+        ],
       },
     },
     'gatsby-plugin-react-helmet',
@@ -34,14 +41,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'films',
+        name: 'film',
         path: `${__dirname}/data/films/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'locations',
+        name: 'location',
         path: `${__dirname}/data/locations/`,
       },
     },

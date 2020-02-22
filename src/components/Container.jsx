@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledContainer = styled.main`
+const StyledContainer = styled.div`
   margin: 0 1rem;
 `;
 

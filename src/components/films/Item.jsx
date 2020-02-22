@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 
 const StyledFilmItem = styled.div`
   img {
@@ -19,7 +19,10 @@ const StyledFilmItem = styled.div`
 const FilmItem = ({ id, title, poster }) => (
   <StyledFilmItem>
     <Link to={`/film/${id}`}>
-      <img src={poster.childImageSharp.resize.src} alt={`"${title}" Poster`} />
+      <img
+        src={withPrefix(poster.childImageSharp.resize.src)}
+        alt={`"${title}" Poster`}
+      />
     </Link>
   </StyledFilmItem>
 );

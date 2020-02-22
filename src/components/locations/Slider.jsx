@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withPrefix } from 'gatsby';
 
 import Slider from 'react-slick';
 
@@ -17,7 +18,10 @@ const LocationSlider = ({ images }) => (
     {images.map((image, idx) => {
       return (
         <div key={idx}>
-          <img src={image.childImageSharp.original.src} alt={image.name} />
+          <img
+            src={withPrefix(image.childImageSharp.original.src)}
+            alt={image.name}
+          />
         </div>
       );
     })}

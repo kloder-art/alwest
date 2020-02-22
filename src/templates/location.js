@@ -75,8 +75,8 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  resize(width: 250, height: 400, fit: COVER, quality: 50) {
-                    src
+                  fixed(width: 150, height: 230) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }
@@ -88,8 +88,8 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  resize(width: 250, height: 320, fit: COVER) {
-                    src
+                  fixed(width: 150, height: 220) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }

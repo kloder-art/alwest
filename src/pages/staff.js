@@ -36,8 +36,8 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  resize(width: 250, height: 320, fit: COVER) {
-                    src
+                  fixed(width: 150, height: 220) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }

@@ -6,11 +6,13 @@ import Layout from '../components/Layout';
 import Map from '../components/locations/Map';
 import Staff from '../components/staff/Staff';
 import Tags from '../components/films/Tags';
+import SEO from '../components/SEO';
 
 const Film = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <h2>{frontmatter.title}</h2>
 
       <Tags frontmatter={frontmatter} />

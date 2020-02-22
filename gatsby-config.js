@@ -11,6 +11,7 @@ module.exports = {
     'MarkdownRemark.frontmatter.films': 'MarkdownRemark.frontmatter.id',
   },
   plugins: [
+    '@rhysforyou/gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
     {

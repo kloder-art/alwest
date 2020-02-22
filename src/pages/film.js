@@ -8,7 +8,7 @@ import Films from '../components/films/Films';
 
 const FilmsPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Films" />
     <Films items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
   </Layout>
 );

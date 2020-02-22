@@ -7,11 +7,13 @@ import Map from '../components/locations/Map';
 import Staff from '../components/staff/Staff';
 import Films from '../components/films/Films';
 import Slider from '../components/locations/Slider';
+import SEO from '../components/SEO';
 
 const Location = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
+      <SEO title={frontmatter.name} />
       <Map popups={false} markers={[{ frontmatter }]} />
 
       <h2>{frontmatter.name}</h2>

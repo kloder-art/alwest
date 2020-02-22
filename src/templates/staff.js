@@ -5,11 +5,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Films from '../components/films/Films';
 import Map from '../components/locations/Map';
+import SEO from '../components/SEO';
 
 const Staff = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
+      <SEO title={frontmatter.name} />
       <h2>{frontmatter.name}</h2>
       <p>
         {frontmatter.born} - {frontmatter.die}

@@ -5,11 +5,14 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Films from '../components/films/Films';
+import Container from '../components/Container';
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <Films items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
+    <Container>
+      <Films items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
+    </Container>
   </Layout>
 );
 

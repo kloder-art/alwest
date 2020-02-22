@@ -6,7 +6,7 @@ import { Map, TileLayer, Marker, Popup, withLeaflet } from 'react-leaflet';
 import L from 'leaflet';
 
 const StyledMap = styled.div`
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   .map {
     height: 300px;
     .leaflet-popup-content {

@@ -7,37 +7,43 @@ import Map from '../components/locations/Map';
 import Staff from '../components/staff/Staff';
 import Tags from '../components/films/Tags';
 import SEO from '../components/SEO';
+import Container from '../components/Container';
 
 const Film = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <h2>{frontmatter.title}</h2>
+      <Container>
+        <h2 style={{ marginBottom: 0 }}>{frontmatter.title}</h2>
+        <Tags frontmatter={frontmatter} />
 
-      <Tags frontmatter={frontmatter} />
+        <img
+          src={frontmatter.poster.childImageSharp.original.src}
+          alt={frontmatter.title}
+          style={{ maxHeight: '320px', marginBottom: '1rem' }}
+        />
 
-      <img
-        src={frontmatter.poster.childImageSharp.original.src}
-        alt={frontmatter.title}
-        style={{ maxHeight: '320px' }}
-      />
-
-      <p dangerouslySetInnerHTML={{ __html: html }} />
+        <p dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
 
       {frontmatter.locations && frontmatter.locations.length > 0 && (
         <>
-          <h3>Locations</h3>
+          <Container>
+            <h3>Locations</h3>
+          </Container>
           <Map markers={frontmatter.locations} />
         </>
       )}
 
-      {frontmatter.staff && frontmatter.staff.length > 0 && (
-        <>
-          <h3>Staff</h3>
-          <Staff size={'small'} items={frontmatter.staff} />
-        </>
-      )}
+      <Container>
+        {frontmatter.staff && frontmatter.staff.length > 0 && (
+          <>
+            <h3>Staff</h3>
+            <Staff size={'small'} items={frontmatter.staff} />
+          </>
+        )}
+      </Container>
     </Layout>
   );
 };

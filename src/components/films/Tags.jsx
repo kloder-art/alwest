@@ -23,12 +23,22 @@ const SpotifyLink = ({ children }) => (
   </Tag>
 );
 
+const WikipediaLink = ({ children }) => (
+  <Tag>
+    <a href={children} target={'_blank'} rel={'noopener noreferrer'}>
+      Wikipedia
+    </a>
+  </Tag>
+);
+
 const tags = [
   { key: 'year', fn: x => x, cmp: Tag },
   { key: 'duration', fn: formatDuration, cmp: Tag },
   { key: 'imdb', fn: x => x, cmp: IMDBLink },
   { key: 'spotify', fn: x => x, cmp: SpotifyLink },
+  { key: 'wikipedia', fn: x => x, cmp: WikipediaLink },
   { key: 'recaudation', fn: x => x.toLocaleString(), cmp: Tag },
+  { key: 'born', fn: x => x, cmp: Tag },
 ];
 
 const StyledTags = styled.ul`
@@ -56,6 +66,14 @@ Tags.propTypes = {
 };
 
 IMDBLink.propTypes = {
+  children: PropTypes.node,
+};
+
+SpotifyLink.propTypes = {
+  children: PropTypes.node,
+};
+
+WikipediaLink.propTypes = {
   children: PropTypes.node,
 };
 

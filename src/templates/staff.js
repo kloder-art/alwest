@@ -6,43 +6,39 @@ import Layout from '../components/Layout';
 import Films from '../components/films/Films';
 import Map from '../components/locations/Map';
 import SEO from '../components/SEO';
+import Tags from '../components/films/Tags';
+import Container from '../components/Container';
 
 const Staff = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
       <SEO title={frontmatter.name} />
-      <h2>{frontmatter.name}</h2>
-      <p>
-        {frontmatter.born} - {frontmatter.die}
-      </p>
+      <Container>
+        <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
+        <Tags frontmatter={frontmatter} />
 
-      <img
-        src={frontmatter.picture.childImageSharp.original.src}
-        alt={frontmatter.name}
-        style={{ maxHeight: '320px' }}
-      />
+        <img
+          src={frontmatter.picture.childImageSharp.original.src}
+          alt={frontmatter.name}
+          style={{ maxHeight: '320px', marginBottom: '1rem' }}
+        />
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
 
-      <ul>
-        <li>
-          <a href={frontmatter.imdb} target={'blank'}>
-            IMDB
-          </a>
-        </li>
-      </ul>
-
-      {frontmatter.films && frontmatter.films.length > 0 && (
-        <>
-          <h3>Films</h3>
-          <Films size={'small'} items={frontmatter.films} />
-        </>
-      )}
+        {frontmatter.films && frontmatter.films.length > 0 && (
+          <>
+            <h3>Films</h3>
+            <Films size={'small'} items={frontmatter.films} />
+          </>
+        )}
+      </Container>
 
       {frontmatter.locations && frontmatter.locations.length > 0 && (
         <>
-          <h3>Locations</h3>
+          <Container>
+            <h3>Locations</h3>
+          </Container>
           <Map markers={frontmatter.locations} />
         </>
       )}

@@ -8,41 +8,40 @@ import Staff from '../components/staff/Staff';
 import Films from '../components/films/Films';
 import Slider from '../components/locations/Slider';
 import SEO from '../components/SEO';
+import Tags from '../components/films/Tags';
+import Container from '../components/Container';
 
 const Location = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
       <SEO title={frontmatter.name} />
+      <Slider images={frontmatter.images} />
+
+      <Container>
+        <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
+        <Tags frontmatter={frontmatter} />
+
+        <p dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
+
       <Map popups={false} markers={[{ frontmatter }]} />
 
-      <h2>{frontmatter.name}</h2>
+      <Container>
+        {frontmatter.films && frontmatter.films.length > 0 && (
+          <>
+            <h3>Films</h3>
+            <Films size={'small'} items={frontmatter.films} />
+          </>
+        )}
 
-      <p dangerouslySetInnerHTML={{ __html: html }} />
-
-      <ul>
-        <li>
-          <a href={frontmatter.wikipedia} target={'blank'}>
-            Wikipedia
-          </a>
-        </li>
-      </ul>
-
-      {frontmatter.films && frontmatter.films.length > 0 && (
-        <>
-          <h3>Films</h3>
-          <Films size={'small'} items={frontmatter.films} />
-        </>
-      )}
-
-      {frontmatter.staff && frontmatter.staff.length > 0 && (
-        <>
-          <h3>Staff</h3>
-          <Staff size={'small'} items={frontmatter.staff} />
-        </>
-      )}
-
-      <Slider images={frontmatter.images} />
+        {frontmatter.staff && frontmatter.staff.length > 0 && (
+          <>
+            <h3>Staff</h3>
+            <Staff size={'small'} items={frontmatter.staff} />
+          </>
+        )}
+      </Container>
     </Layout>
   );
 };

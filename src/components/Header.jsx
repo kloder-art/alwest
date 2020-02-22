@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import Menu from './Menu';
 
 const StyledHeader = styled.header`
-  margin-bottom: 1.45rem;
   padding: 1rem 1.0875rem;
   display: flex;
   align-items: center;
@@ -14,6 +13,12 @@ const StyledHeader = styled.header`
 
   a.home {
     text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    & {
+      flex-direction: column;
+    }
   }
 `;
 

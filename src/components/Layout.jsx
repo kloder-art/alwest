@@ -6,10 +6,6 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 
-const StyledMain = styled.main`
-  margin: 0 1rem;
-`;
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <StyledMain>{children}</StyledMain>
+      <main>{children}</main>
       <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   );

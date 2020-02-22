@@ -5,6 +5,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Map from '../components/locations/Map';
+import Container from '../components/Container';
 
 const LocationsPage = ({ data }) => (
   <Layout>
@@ -15,15 +16,17 @@ const LocationsPage = ({ data }) => (
       markers={data.allFile.edges.map(x => x.node.childMarkdownRemark)}
     />
 
-    <ul>
-      {data.allFile.edges.map(({ node }) => (
-        <li key={node.childMarkdownRemark.frontmatter.id}>
-          <Link to={`/location/${node.childMarkdownRemark.frontmatter.id}`}>
-            {node.childMarkdownRemark.frontmatter.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Container>
+      <ul>
+        {data.allFile.edges.map(({ node }) => (
+          <li key={node.childMarkdownRemark.frontmatter.id}>
+            <Link to={`/location/${node.childMarkdownRemark.frontmatter.id}`}>
+              {node.childMarkdownRemark.frontmatter.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Container>
   </Layout>
 );
 

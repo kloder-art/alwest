@@ -19,6 +19,7 @@ const StyledStaff = styled.div`
   justify-items: center;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 `;
 
 const Staff = ({ items, size }) => {

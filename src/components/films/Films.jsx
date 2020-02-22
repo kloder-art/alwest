@@ -6,7 +6,7 @@ import Item from './Item';
 
 const sizes = {
   small: '100px',
-  normal: '170px',
+  normal: '150px',
 };
 
 const StyledFilms = styled.div`

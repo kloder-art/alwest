@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Link, withPrefix } from 'gatsby';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
 
 const StyledItem = styled.div`

@@ -19,10 +19,7 @@ const StyledFilmItem = styled.div`
 const FilmItem = ({ id, title, poster }) => (
   <StyledFilmItem>
     <Link to={`/film/${id}`}>
-      <img
-        src={poster.childImageSharp.original.src}
-        alt={`"${title}" Poster`}
-      />
+      <img src={poster.childImageSharp.resize.src} alt={`"${title}" Poster`} />
     </Link>
   </StyledFilmItem>
 );

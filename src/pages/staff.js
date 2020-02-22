@@ -20,7 +20,7 @@ const IndexPage = () => {
                 name
                 picture {
                   childImageSharp {
-                    original {
+                    resize(width: 250, height: 320, fit: COVER) {
                       src
                     }
                   }

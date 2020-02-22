@@ -33,7 +33,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  original {
+                  resize(width: 250, height: 320, fit: COVER) {
                     src
                   }
                 }

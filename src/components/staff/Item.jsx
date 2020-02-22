@@ -24,7 +24,7 @@ const StyledItem = styled.div`
 const Item = ({ id, picture, name }) => (
   <StyledItem>
     <Link to={`/staff/${id}`}>
-      <img src={picture.childImageSharp.original.src} alt={`"${name}" Photo`} />
+      <img src={picture.childImageSharp.resize.src} alt={`"${name}" Photo`} />
       <p>{name}</p>
     </Link>
   </StyledItem>

@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Header from './Header';
+import Footer from './Footer';
 
 const StyledMain = styled.main`
   margin: 0 1rem;
@@ -24,10 +25,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <StyledMain>{children}</StyledMain>
-      <footer>
-        © {new Date().getFullYear()}, Built with{' '}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   );
 };

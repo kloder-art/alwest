@@ -34,7 +34,7 @@ const Staff = ({ data }) => {
       {frontmatter.films && frontmatter.films.length > 0 && (
         <>
           <h3>Films</h3>
-          <Films items={frontmatter.films} />
+          <Films size={'small'} items={frontmatter.films} />
         </>
       )}
 
@@ -76,7 +76,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  original {
+                  resize(width: 250, height: 320, fit: COVER) {
                     src
                   }
                 }

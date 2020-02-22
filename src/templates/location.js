@@ -29,14 +29,14 @@ const Location = ({ data }) => {
       {frontmatter.films && frontmatter.films.length > 0 && (
         <>
           <h3>Films</h3>
-          <Films items={frontmatter.films} />
+          <Films size={'small'} items={frontmatter.films} />
         </>
       )}
 
       {frontmatter.staff && frontmatter.staff.length > 0 && (
         <>
           <h3>Staff</h3>
-          <Staff items={frontmatter.staff} />
+          <Staff size={'small'} items={frontmatter.staff} />
         </>
       )}
 
@@ -74,7 +74,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  original {
+                  resize(width: 250, height: 320, fit: COVER) {
                     src
                   }
                 }
@@ -87,7 +87,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  original {
+                  resize(width: 250, height: 320, fit: COVER) {
                     src
                   }
                 }

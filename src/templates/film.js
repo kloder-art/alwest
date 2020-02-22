@@ -5,13 +5,16 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Map from '../components/locations/Map';
 import Staff from '../components/staff/Staff';
+import Tags from '../components/films/Tags';
 
 const Film = ({ data }) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
       <h2>{frontmatter.title}</h2>
-      <p>{frontmatter.year}</p>
+
+      <Tags frontmatter={frontmatter} />
+
       <img
         src={frontmatter.poster.childImageSharp.original.src}
         alt={frontmatter.title}
@@ -19,33 +22,6 @@ const Film = ({ data }) => {
       />
 
       <p dangerouslySetInnerHTML={{ __html: html }} />
-
-      <ul>
-        {frontmatter.imdb && (
-          <li>
-            <a href={frontmatter.imdb} target={'blank'}>
-              IMDB
-            </a>
-          </li>
-        )}
-        {frontmatter.spotify && (
-          <li>
-            <a href={frontmatter.spotify} target={'blank'}>
-              Spotify: BSO
-            </a>
-          </li>
-        )}
-        {frontmatter.recaudation && (
-          <li>
-            <strong>Recaudation:</strong> {frontmatter.recaudation}
-          </li>
-        )}
-        {frontmatter.duration && (
-          <li>
-            <strong>Duration:</strong> {frontmatter.duration} m.
-          </li>
-        )}
-      </ul>
 
       {frontmatter.locations && frontmatter.locations.length > 0 && (
         <>
@@ -57,7 +33,7 @@ const Film = ({ data }) => {
       {frontmatter.staff && frontmatter.staff.length > 0 && (
         <>
           <h3>Staff</h3>
-          <Staff items={frontmatter.staff} />
+          <Staff size={'small'} items={frontmatter.staff} />
         </>
       )}
     </Layout>
@@ -104,7 +80,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  original {
+                  resize(width: 250, height: 320, fit: COVER) {
                     src
                   }
                 }

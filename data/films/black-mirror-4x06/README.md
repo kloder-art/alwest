@@ -7,6 +7,9 @@ imdb: https://www.imdb.com/title/tt5058700/
 poster: poster.jpg
 locations:
   - restaurante-alfaro
+staff:
+  - colm-mccarthy
+  - laetitia-wright
 ---
 
 ## Sinopsis

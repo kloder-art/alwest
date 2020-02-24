@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image/withIEPolyfill';
 
 import Layout from '../components/Layout';
 import Films from '../components/films/Films';
@@ -18,10 +19,12 @@ const Staff = ({ data }) => {
         <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
         <Meta frontmatter={frontmatter} />
 
-        <img
-          src={frontmatter.picture.childImageSharp.original.src}
+        <Img
+          fixed={frontmatter.picture.childImageSharp.fixed}
+          objectFit={'cover'}
+          objectPosition={'50% 50%'}
           alt={frontmatter.name}
-          style={{ maxHeight: '320px', marginBottom: '1rem' }}
+          style={{ marginBottom: '1rem' }}
         />
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -63,8 +66,8 @@ export const query = graphql`
           imdb
           picture {
             childImageSharp {
-              original {
-                src
+              fixed(width: 210, height: 320) {
+                ...GatsbyImageSharpFixed
               }
             }
           }

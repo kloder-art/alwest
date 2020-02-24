@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image/withIEPolyfill';
 
 import Layout from '../components/Layout';
 import Map from '../components/locations/Map';
@@ -18,10 +19,12 @@ const Film = ({ data }) => {
         <h2 style={{ marginBottom: 0 }}>{frontmatter.title}</h2>
         <Meta frontmatter={frontmatter} />
 
-        <img
-          src={frontmatter.poster.childImageSharp.original.src}
+        <Img
+          fixed={frontmatter.poster.childImageSharp.fixed}
+          objectFit={'cover'}
+          objectPosition={'50% 50%'}
           alt={frontmatter.title}
-          style={{ maxHeight: '320px', marginBottom: '1rem' }}
+          style={{ marginBottom: '1rem' }}
         />
 
         <p dangerouslySetInnerHTML={{ __html: html }} />
@@ -64,12 +67,12 @@ export const query = graphql`
           imdb
           spotify
           recaudation
-          duration
+          runtime
           year
           poster {
             childImageSharp {
-              original {
-                src
+              fixed(width: 210, height: 320) {
+                ...GatsbyImageSharpFixed
               }
             }
           }

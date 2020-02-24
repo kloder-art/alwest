@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Slider from 'react-slick';
+import Img from 'gatsby-image/withIEPolyfill';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -18,7 +18,7 @@ const LocationSlider = ({ images }) => (
       {images.map((image, idx) => {
         return (
           <div key={idx}>
-            <img src={image.childImageSharp.original.src} alt={image.name} />
+            <Img fluid={image.childImageSharp.fluid} alt={image.name} />
           </div>
         );
       })}

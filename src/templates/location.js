@@ -64,8 +64,8 @@ export const query = graphql`
           wikipedia
           images {
             childImageSharp {
-              original {
-                src
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }

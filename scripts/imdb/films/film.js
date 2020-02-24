@@ -1,6 +1,6 @@
 const { getFull } = require('imdb-scrapper');
 
-const { convertToSlug, wrapText } = require('../util/common');
+const { slugify, wrapText } = require('../util/common');
 
 /**
  * Get all film data
@@ -47,10 +47,8 @@ runtime: ${parseRuntime(data.runtime)}
 poster: poster.jpg
 staff:
 ${[]
-  .concat(
-    data.director ? data.director.map(x => `  - ${convertToSlug(x)}`) : [],
-  )
-  .concat(data.stars ? data.stars.map(x => `  - ${convertToSlug(x)}`) : [])
+  .concat(data.director ? data.director.map(x => `  - ${slugify(x)}`) : [])
+  .concat(data.stars ? data.stars.map(x => `  - ${slugify(x)}`) : [])
   .join('\n')}
 ---
 

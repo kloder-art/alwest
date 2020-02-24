@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const { promisify } = require('util');
 const writeFilePromise = promisify(fs.writeFile);
 
-const { convertToSlug } = require('./util/common');
+const { slugify } = require('./util/common');
 const { doStaffRequest, formatStaff } = require('./staff/staff');
 
 const askWriteFile = async file =>
@@ -18,7 +18,7 @@ const askWriteFile = async file =>
 
 module.exports = async (id, filmSlug) => {
   const data = (await doStaffRequest(id))[0];
-  const slug = convertToSlug(data.actorName);
+  const slug = slugify(data.actorName);
   const dir = `data/staff/${slug}/`;
 
   // Check if the folder exists

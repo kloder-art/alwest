@@ -1,11 +1,11 @@
-# Almería Films
+# AlWest
 
 <a href="https://github.com/kloderart/alwest/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Almería is released under the MIT license." />
 </a>
 
 <a href="https://www.gatsbyjs.org/">
-  <img src="https://img.shields.io/badge/Gatsby-2.13-%23673494" alt="Using Gatsby" />
+  <img src="https://img.shields.io/badge/Gatsby-2.18-%23673494" alt="Using Gatsby" />
 </a>
 
 <a href="https://styled-components.com/">
@@ -19,7 +19,7 @@ npm ci
 gatsby develop
 ```
 
-And go to http://localhost:8000 for see the site.
+And go to http://localhost:8000 for the site.
 
 ## References
 

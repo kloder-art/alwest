@@ -3,7 +3,7 @@ id: a-woman-named-apache
 title: Una mujer llamada Apache
 year: 1976
 imdb: https://www.imdb.com/title/tt0168687/
-duration: 85
+runtime: 85
 poster: poster.jpg
 locations:
 staff:

@@ -2,7 +2,7 @@
 id: conan-the-barbarian
 title: Conan, el bárbaro
 year: 1982
-duration: 129
+runtime: 129
 imdb: https://www.imdb.com/title/tt0082198/
 spotify: https://open.spotify.com/album/66fCY4Bqgf8dZIFUBWGJuv
 poster: poster.jpg

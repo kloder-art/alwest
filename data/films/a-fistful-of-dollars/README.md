@@ -3,7 +3,7 @@ id: a-fistful-of-dollars
 title: Por un puñado de dolares
 year: 1964
 direction: Sergio Leone
-duration: 101
+runtime: 101
 recaudation: 3500000
 imdb: https://www.imdb.com/title/tt0058461/
 spotify: https://open.spotify.com/album/1DFPLv3GiepUp4rhgD4Qc6?si=e-V_805cSu-mhVlN471PSQ

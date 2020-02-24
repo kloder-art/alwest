@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const formatDuration = duration =>
-  `${Math.floor(duration / 60)}h. ${duration % 60}s.`;
+const formatRuntime = runtime =>
+  runtime > 60
+    ? `${Math.floor(runtime / 60)}h. ${runtime % 60}m.`
+    : `${runtime}m`;
 
 const Item = ({ children }) => <li>{children}</li>;
 
@@ -15,7 +17,7 @@ const Link = ({ children, label }) => (
 
 const items = [
   { key: 'year' },
-  { key: 'duration', fn: formatDuration },
+  { key: 'runtime', fn: formatRuntime },
   { key: 'imdb', label: 'IMDB', cmp: Link },
   { key: 'spotify', label: 'BSO', cmp: Link },
   { key: 'wikipedia', label: 'Wikipedia', cmp: Link },

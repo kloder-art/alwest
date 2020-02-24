@@ -3,7 +3,7 @@ id: vado-lammazzo-e-torno
 title: Voy, le mato y vuelvo
 original: Vado, lammazzo e torno
 year: 1967
-duration: 105
+runtime: 105
 imdb: https://www.imdb.com/title/tt0062429/
 poster: poster.jpg
 locations:

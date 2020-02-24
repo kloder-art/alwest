@@ -4,7 +4,7 @@ title: Los cuatro del apocalipsis
 original: I quattro dell'Apocalisse
 year: 1975
 direction: Lucio Fulci
-duration: 104
+runtime: 104
 recaudation: 3500000
 imdb: https://www.imdb.com/title/tt0073594/
 poster: poster.jpg

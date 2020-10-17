@@ -5,11 +5,9 @@ year: 2020
 runtime: 109
 imdb: https://www.imdb.com/title/tt7134096/
 poster: poster.jpg
-locations:
-staff:
+actors:
   - blake-lively
-  - richard-brake
-  - elly-curtis
+  - jude-law
 ---
 
 ## Sinopsis

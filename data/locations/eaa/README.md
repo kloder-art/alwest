@@ -8,7 +8,6 @@ images:
   - 01.jpg
 films:
   - indiana-jones-and-the-last-crusade
-staff:
 ---
 
 La Escuela de Arte de Almería, anteriormente denominada Escuela de Artes

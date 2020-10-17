@@ -3,7 +3,7 @@ id: matt-smith
 name: Matt Smith
 imdb: https://www.imdb.com/name/nm1741002
 picture: picture.jpg
-films:
+actor:
   - doctor-who-7x03
 locations:
   - fort-bravo

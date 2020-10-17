@@ -27,21 +27,26 @@ const Location = ({ data }) => {
 
       <Map popups={false} markers={[{ frontmatter }]} />
 
-      <Container>
-        {frontmatter.films && frontmatter.films.length > 0 && (
-          <>
-            <h3>Films</h3>
-            <Films size={'small'} items={frontmatter.films} />
-          </>
-        )}
+      {frontmatter.films && frontmatter.films.length > 0 && (
+        <Container>
+          <h3>Films</h3>
+          <Films size={'small'} items={frontmatter.films} />
+        </Container>
+      )}
 
-        {frontmatter.staff && frontmatter.staff.length > 0 && (
-          <>
-            <h3>Staff</h3>
-            <Staff size={'small'} items={frontmatter.staff} />
-          </>
-        )}
-      </Container>
+      {frontmatter.directors && frontmatter.directors.length > 0 && (
+        <Container>
+          <h3>Directors</h3>
+          <Staff size={'small'} items={frontmatter.directors} />
+        </Container>
+      )}
+
+      {frontmatter.actors && frontmatter.actors.length > 0 && (
+        <Container>
+          <h3>Actors</h3>
+          <Staff size={'small'} items={frontmatter.actors} />
+        </Container>
+      )}
     </Layout>
   );
 };
@@ -82,7 +87,20 @@ export const query = graphql`
               }
             }
           }
-          staff {
+          directors {
+            frontmatter {
+              id
+              name
+              picture {
+                childImageSharp {
+                  fixed(width: 150, height: 220) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+          actors {
             frontmatter {
               id
               name

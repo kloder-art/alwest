@@ -7,9 +7,12 @@ imdb: https://www.imdb.com/title/tt5058700/
 poster: poster.jpg
 locations:
   - restaurante-alfaro
-staff:
+directors:
   - colm-mccarthy
+actors:
+  - douglas-hodge
   - laetitia-wright
+  - daniel-lapaine
 ---
 
 ## Sinopsis

@@ -4,7 +4,7 @@ name: Harrison Ford
 born: 07/13/1942
 imdb: https://www.imdb.com/name/nm0000148/,
 picture: picture.jpg
-films:
+actor:
   - indiana-jones-and-the-last-crusade
 locations:
   - monsul

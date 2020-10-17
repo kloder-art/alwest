@@ -8,8 +8,9 @@ images:
   - 01.jpg
 films:
   - doctor-who-7x03
-staff:
+directors:
   - saul-metzstein
+actors:
   - matt-smith
   - karen-gillan
   - arthur-darvill

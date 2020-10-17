@@ -3,9 +3,8 @@ id: rafael-rivelles
 name: Rafael Rivelles
 imdb: https://www.imdb.com/name/nm0729157
 picture: picture.jpg
-films:
+actor:
   - el-beso-de-judas
-locations:
 ---
 
 ## Bio

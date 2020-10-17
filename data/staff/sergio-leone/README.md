@@ -5,9 +5,8 @@ born: 1942-07-13
 die: 1989-04-30
 imdb: https://www.imdb.com/name/nm0001466/
 picture: picture.jpg
-films:
+director:
   - il-buono-il-brutto-il-cattivo
-locations:
 ---
 
 # Bio

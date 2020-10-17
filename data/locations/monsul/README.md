@@ -8,7 +8,7 @@ images:
   - 01.jpg
 films:
   - indiana-jones-and-the-last-crusad
-staff:
+actors:
   - harrison-ford
   - sean-connery
 ---

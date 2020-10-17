@@ -3,9 +3,8 @@ id: tomas-blanco
 name: Tomás Blanco
 imdb: https://www.imdb.com/name/nm0087339
 picture: picture.jpg
-films:
+actor:
   - la-llamada-de-africa
-locations:
 ---
 
 ## Bio

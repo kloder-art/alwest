@@ -7,7 +7,8 @@ images:
   - 01.jpg
 films:
   - black-mirror-4x06
-staff:
+directors:
   - colm-mccarthy
+actors:
   - laetitia-wright
 ---

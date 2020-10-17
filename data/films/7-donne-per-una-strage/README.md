@@ -6,10 +6,12 @@ runtime: 101
 imdb: https://www.imdb.com/title/tt0060430/
 poster: poster.jpg
 locations:
-staff:
+directors:
   - rudolf-zehetgruber
-  - gianfranco-parolini
-  - sidney-w-pink
+actors:
+  - anna-baxter
+  - maria-perschy
+  - maria-mahor
 ---
 
 ## Sinopsis

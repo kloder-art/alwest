@@ -3,7 +3,7 @@ id: karen-gillan
 name: Karen Gillan
 imdb: https://www.imdb.com/name/nm2394794
 picture: picture.jpg
-films:
+actor:
   - doctor-who-7x03
 locations:
   - fort-bravo

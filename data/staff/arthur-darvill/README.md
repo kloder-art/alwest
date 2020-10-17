@@ -3,7 +3,7 @@ id: arthur-darvill
 name: Arthur Darvill
 imdb: https://www.imdb.com/name/nm2965271
 picture: picture.jpg
-films:
+actor:
   - doctor-who-7x03
 locations:
   - fort-bravo

@@ -3,7 +3,7 @@ id: itziar-ituno
 name: Itziar Ituño
 imdb: https://www.imdb.com/name/nm1523587
 picture: picture.jpg
-films:
+actor:
   - la-casa-de-papel-3x03
 locations:
   - las-salinas

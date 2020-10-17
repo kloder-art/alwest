@@ -6,8 +6,9 @@ imdb: https://www.imdb.com/title/tt2340501
 year: 2012
 runtime: 44
 poster: poster.jpg
-staff:
+directors:
   - saul-metzstein
+actors:
   - matt-smith
   - karen-gillan
   - arthur-darvill

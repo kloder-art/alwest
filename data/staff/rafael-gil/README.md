@@ -3,9 +3,8 @@ id: rafael-gil
 name: Rafael Gil
 imdb: https://www.imdb.com/name/nm0317856
 picture: picture.jpg
-films:
+director:
   - el-beso-de-judas
-locations:
 ---
 
 ## Bio

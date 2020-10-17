@@ -3,10 +3,9 @@ id: gerard-tichy
 name: Gérard Tichy
 imdb: https://www.imdb.com/name/nm0862677
 picture: picture.jpg
-films:
+actor:
   - la-llamada-de-africa
   - el-beso-de-judas
-locations:
 ---
 
 ## Bio

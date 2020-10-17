@@ -3,13 +3,15 @@ id: i-quattro-dell-apocalisse
 title: Los cuatro del apocalipsis
 original: I quattro dell'Apocalisse
 year: 1975
-direction: Lucio Fulci
 runtime: 104
-recaudation: 3500000
 imdb: https://www.imdb.com/title/tt0073594/
 poster: poster.jpg
-locations:
-staff:
+directors:
+  - lucio-fulci
+actors:
+  - fabi-testi
+  - lynne-frederick
+  - michael-j-pollard
 ---
 
 ## Sinopsis

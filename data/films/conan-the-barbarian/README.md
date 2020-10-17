@@ -7,8 +7,12 @@ imdb: https://www.imdb.com/title/tt0082198/
 spotify: https://open.spotify.com/album/66fCY4Bqgf8dZIFUBWGJuv
 poster: poster.jpg
 locations:
-staff:
+directors:
   - john-milius
+actors:
+  - arnold-schwarzenegger
+  - james-earl-jones
+  - max-von-sydow
 ---
 
 ## Sinopsis

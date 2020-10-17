@@ -5,9 +5,12 @@ year: 1988
 runtime: 126
 imdb: https://www.imdb.com/title/tt0096764/
 poster: poster.jpg
-locations:
-staff:
+directors:
   - terry-gilliam
+actors:
+  - john-neville
+  - eric-idle
+  - sarah-polley
 ---
 
 ## Sinopsis

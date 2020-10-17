@@ -3,9 +3,8 @@ id: francisco-rabal
 name: Francisco Rabal
 imdb: https://www.imdb.com/name/nm0704719
 picture: picture.jpg
-films:
+actor:
   - el-beso-de-judas
-locations:
 ---
 
 ## Bio

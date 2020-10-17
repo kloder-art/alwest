@@ -3,7 +3,7 @@ id: saul-metzstein
 name: Saul Metzstein
 imdb: https://www.imdb.com/name/nm0582792
 picture: picture.jpg
-films:
+director:
   - doctor-who-7x03
 locations:
   - fort-bravo

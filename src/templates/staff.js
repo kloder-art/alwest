@@ -28,14 +28,21 @@ const Staff = ({ data }) => {
         />
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
-
-        {frontmatter.films && frontmatter.films.length > 0 && (
-          <>
-            <h3>Films</h3>
-            <Films size={'small'} items={frontmatter.films} />
-          </>
-        )}
       </Container>
+
+      {frontmatter.director && frontmatter.director.length > 0 && (
+        <Container>
+          <h3>Director in</h3>
+          <Films size={'small'} items={frontmatter.director} />
+        </Container>
+      )}
+
+      {frontmatter.actor && frontmatter.actor.length > 0 && (
+        <Container>
+          <h3>Actor in</h3>
+          <Films size={'small'} items={frontmatter.actor} />
+        </Container>
+      )}
 
       {frontmatter.locations && frontmatter.locations.length > 0 && (
         <>
@@ -71,7 +78,20 @@ export const query = graphql`
               }
             }
           }
-          films {
+          director {
+            frontmatter {
+              id
+              title
+              poster {
+                childImageSharp {
+                  fixed(width: 150, height: 230) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+          actor {
             frontmatter {
               id
               title

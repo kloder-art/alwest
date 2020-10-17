@@ -5,9 +5,10 @@ imdb: https://www.imdb.com/title/tt8299498
 year: 2019
 runtime: 49
 poster: poster.jpg
-netflix: https://www.netflix.com/watch/81035322
 spotify: https://open.spotify.com/playlist/2ihK63yWyrMYmdDONdjwif
-staff:
+directors:
+  - jesus-colmenar
+actors:
   - jesus-colmenar
   - alvaro-morte
   - itziar-ituno

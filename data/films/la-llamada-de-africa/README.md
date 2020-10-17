@@ -5,8 +5,9 @@ imdb: https://www.imdb.com/title/tt0044845
 year: 1952
 runtime: 109
 poster: poster.jpg
-staff:
+directors:
   - cesar-fernandez-ardavin
+actors:
   - angel-picazo
   - gerard-tichy
   - tomas-blanco

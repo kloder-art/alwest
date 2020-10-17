@@ -5,8 +5,9 @@ imdb: https://www.imdb.com/title/tt0046769
 year: 1954
 runtime: 90
 poster: poster.jpg
-staff:
+directors:
   - rafael-gil
+actors:
   - rafael-rivelles
   - francisco-rabal
   - gerard-tichy

@@ -6,8 +6,12 @@ imdb: https://www.imdb.com/title/tt0168687/
 runtime: 85
 poster: poster.jpg
 locations:
-staff:
+director:
   - giorgio-mariuzzo
+actors:
+  - al-cliver
+  - clara-hopf
+  - federico-boido
 ---
 
 ## Sinopsis

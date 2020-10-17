@@ -7,8 +7,9 @@ images:
   - 01.jpg
 films:
   - la-casa-de-papel-3x03
-staff:
+directors:
   - jesus-colmenar
+actors:
   - alvaro-morte
   - itziar-ituno
 ---

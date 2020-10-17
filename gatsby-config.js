@@ -7,7 +7,10 @@ module.exports = {
   },
   mapping: {
     'MarkdownRemark.frontmatter.locations': 'MarkdownRemark.frontmatter.id',
-    'MarkdownRemark.frontmatter.staff': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.actors': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.directors': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.actor': 'MarkdownRemark.frontmatter.id',
+    'MarkdownRemark.frontmatter.director': 'MarkdownRemark.frontmatter.id',
     'MarkdownRemark.frontmatter.films': 'MarkdownRemark.frontmatter.id',
   },
   plugins: [

@@ -4,7 +4,7 @@ name: Sean Connery
 born: 1942-07-13
 imdb: https://www.imdb.com/name/nm0000125
 picture: picture.jpg
-films:
+actor:
   - indiana-jones-and-the-last-crusade
 locations:
   - monsul

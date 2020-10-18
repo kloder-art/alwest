@@ -6,7 +6,6 @@ runtime: 129
 imdb: https://www.imdb.com/title/tt0082198/
 spotify: https://open.spotify.com/album/66fCY4Bqgf8dZIFUBWGJuv
 poster: poster.jpg
-locations:
 directors:
   - john-milius
 actors:

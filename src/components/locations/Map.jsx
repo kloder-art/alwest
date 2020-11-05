@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Map, TileLayer, Marker, Popup, withLeaflet } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
 const StyledMap = styled.div`
@@ -20,9 +20,9 @@ const StyledMap = styled.div`
   }
 `;
 
-const getBounds = markers =>
+const getBounds = (markers) =>
   markers.length > 1
-    ? L.latLngBounds(markers.map(x => [x.frontmatter.lat, x.frontmatter.lon]))
+    ? L.latLngBounds(markers.map((x) => [x.frontmatter.lat, x.frontmatter.lon]))
     : L.latLng(markers[0].frontmatter.lat, markers[0].frontmatter.lon).toBounds(
         1000,
       );
@@ -46,7 +46,7 @@ const LocationsMap = ({ markers, popups, scrollWheelZoom }) => {
   return (
     <StyledMap>
       {typeof window !== 'undefined' && (
-        <Map
+        <MapContainer
           bounds={getBounds(markers)}
           boundsOptions={{ padding: [64, 64] }}
           className={'map'}
@@ -58,7 +58,7 @@ const LocationsMap = ({ markers, popups, scrollWheelZoom }) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {getMarkers(markers, popups)}
-        </Map>
+        </MapContainer>
       )}
     </StyledMap>
   );

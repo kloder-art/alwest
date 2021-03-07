@@ -14,7 +14,6 @@ module.exports = {
     'MarkdownRemark.frontmatter.films': 'MarkdownRemark.frontmatter.id',
   },
   plugins: [
-    '@rhysforyou/gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
     {
@@ -23,16 +22,16 @@ module.exports = {
         linkStyles: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Rye',
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-prefetch-google-fonts',
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: 'Rye',
+    //       },
+    //     ],
+    //   },
+    // },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-transformer-remark',

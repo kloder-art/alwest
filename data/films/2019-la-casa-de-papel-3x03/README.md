@@ -9,7 +9,6 @@ spotify: https://open.spotify.com/playlist/2ihK63yWyrMYmdDONdjwif
 directors:
   - jesus-colmenar
 actors:
-  - jesus-colmenar
   - alvaro-morte
   - itziar-ituno
 locations:

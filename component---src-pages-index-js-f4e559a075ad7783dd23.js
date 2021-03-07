@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[678],{7704:function(t,e,u){"use strict";u.r(e);var a=u(7294),f=u(5444);e.default=function(){return(0,a.useEffect)((function(){(0,f.navigate)("/film")})),null}}}]);
+//# sourceMappingURL=component---src-pages-index-js-f4e559a075ad7783dd23.js.map

@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{RXBc:function(n,t,c){"use strict";c.r(t);var e=c("q1tI"),u=c("Wbzz");t.default=function(){return Object(e.useEffect)((function(){Object(u.navigate)("/film")})),null}}}]);
-//# sourceMappingURL=component---src-pages-index-js-1ed8daa98395a9626c3f.js.map

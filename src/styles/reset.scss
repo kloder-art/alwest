@@ -40,7 +40,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  background: #111;
+  color: #eee;
   font-family: sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -266,4 +267,7 @@ abbr[title] {
   html {
     font-size: 100%;
   }
+}
+a {
+  color: orange;
 }

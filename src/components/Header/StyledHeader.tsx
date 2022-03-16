@@ -5,6 +5,11 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1999;
+  width: 100%;
+  background-color: #111;
+  top: 0;
 
   a.home {
     text-decoration: none;

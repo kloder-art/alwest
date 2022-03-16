@@ -2,7 +2,7 @@
   "name": "alwest",
   "private": true,
   "description": "Almería Media Collection",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Javier López Úbeda <jlopezcur@gmail.com>",
   "dependencies": {
     "gatsby": "^4.9.3",

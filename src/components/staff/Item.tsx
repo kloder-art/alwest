@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
+
+import { StaffItemProps } from './definitions';
 
 const StyledItem = styled.div`
   border-radius: 0.5rem;
@@ -20,7 +21,7 @@ const StyledItem = styled.div`
   }
 `;
 
-const Item = ({ id, picture, name }) => (
+export const Item: React.FC<StaffItemProps> = ({ id, picture, name = '' }) => (
   <StyledItem>
     <Link to={`/staff/${id}`}>
       <Img
@@ -33,15 +34,3 @@ const Item = ({ id, picture, name }) => (
     </Link>
   </StyledItem>
 );
-
-Item.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.object,
-};
-
-Item.defaultProps = {
-  name: '',
-};
-
-export default Item;

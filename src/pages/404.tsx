@@ -1,9 +1,9 @@
-import React from 'react';
-
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Container from '../components/Container';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/SEO';
+import { Container } from '../components/Container';
 
 const StyledNotFoundPage = styled.div`
   margin: 4rem 0;

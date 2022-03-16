@@ -1,19 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Map from '../components/locations/Map';
-import Container from '../components/Container';
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/SEO';
+import { LocationsMap } from '../components/locations/LocationsMap';
+import { Container } from '../components/Container';
+import { MarkerProps } from '../components/locations/definitions';
 
-const LocationsPage = ({ data }) => (
+interface LocationsPageProps {
+  allFile: {
+    edges: { node: { childMarkdownRemark: MarkerProps } }[];
+  };
+}
+
+const LocationsPage = ({ data }: PageProps<LocationsPageProps>) => (
   <Layout>
     <SEO title="Locations" />
 
-    <Map
+    <LocationsMap
       scrollWheelZoom={true}
-      markers={data.allFile.edges.map(x => x.node.childMarkdownRemark)}
+      markers={data.allFile.edges.map((x) => x.node.childMarkdownRemark)}
     />
 
     <Container>
@@ -29,10 +35,6 @@ const LocationsPage = ({ data }) => (
     </Container>
   </Layout>
 );
-
-LocationsPage.propTypes = {
-  data: PropTypes.object,
-};
 
 export default LocationsPage;
 

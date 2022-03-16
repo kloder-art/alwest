@@ -1,24 +1,19 @@
 module.exports = {
   root: true,
-  globals: {
-    page: true,
-    browser: true,
-    context: true
-  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: [
-    'plugin:react/recommended'
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   rules: {
     quotes: ['error', 'single'],
-    semi: 'error'
+    semi: 'error',
   },
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module'
-  }
 };

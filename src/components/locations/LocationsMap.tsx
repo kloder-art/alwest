@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import { MarkerFrontmatterProps, MarkerProps } from './definitions';
 
 const StyledMap = styled.div`
   margin-bottom: 1rem;
@@ -20,14 +20,14 @@ const StyledMap = styled.div`
   }
 `;
 
-const getBounds = (markers) =>
+const getBounds = (markers: MarkerProps[]) =>
   markers.length > 1
     ? L.latLngBounds(markers.map((x) => [x.frontmatter.lat, x.frontmatter.lon]))
     : L.latLng(markers[0].frontmatter.lat, markers[0].frontmatter.lon).toBounds(
         1000,
       );
 
-const getPopup = (frontmatter, html) => (
+const getPopup = (frontmatter: MarkerFrontmatterProps, html: string) => (
   <Popup>
     <h6>{frontmatter.name}</h6>
     <p>{html.slice(0, 100)}...</p>
@@ -35,14 +35,24 @@ const getPopup = (frontmatter, html) => (
   </Popup>
 );
 
-const getMarkers = (markers, popups) =>
-  markers.map(({ frontmatter, html }) => (
+const getMarkers = (markers: MarkerProps[], popups: boolean) =>
+  markers.map(({ frontmatter, html = '' }) => (
     <Marker position={[frontmatter.lat, frontmatter.lon]} key={frontmatter.id}>
       {popups && getPopup(frontmatter, html)}
     </Marker>
   ));
 
-const LocationsMap = ({ markers, popups, scrollWheelZoom }) => {
+interface LocationsMapProps {
+  markers: MarkerProps[];
+  popups?: boolean;
+  scrollWheelZoom?: boolean;
+}
+
+export const LocationsMap: React.FC<LocationsMapProps> = ({
+  markers = [],
+  popups = true,
+  scrollWheelZoom = false,
+}) => {
   return (
     <StyledMap>
       {typeof window !== 'undefined' && (
@@ -63,17 +73,3 @@ const LocationsMap = ({ markers, popups, scrollWheelZoom }) => {
     </StyledMap>
   );
 };
-
-LocationsMap.propTypes = {
-  markers: PropTypes.array,
-  popups: PropTypes.bool,
-  scrollWheelZoom: PropTypes.bool,
-};
-
-LocationsMap.defaultProps = {
-  markers: [],
-  popups: true,
-  scrollWheelZoom: false,
-};
-
-export default LocationsMap;

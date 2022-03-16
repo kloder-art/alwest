@@ -1,16 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import * as React from 'react';
+import { graphql, PageProps } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
 
-import Layout from '../components/Layout';
-import Map from '../components/locations/Map';
-import Staff from '../components/staff/Staff';
-import Meta from '../components/Meta';
-import SEO from '../components/SEO';
-import Container from '../components/Container';
+import { Layout } from '../components/Layout';
+import { LocationsMap } from '../components/locations/LocationsMap';
+import { Staff } from '../components/staff/Staff';
+import { Meta } from '../components/Meta';
+import { SEO } from '../components/SEO';
+import { Container } from '../components/Container';
+import { FixedObject } from 'gatsby-image';
+import { MarkerProps } from '../components/locations/definitions';
+import { StaffItemProps } from '../components/staff/definitions';
 
-const Film = ({ data }) => {
+interface FilmPageProps {
+  file: {
+    childMarkdownRemark: {
+      frontmatter: {
+        id: string;
+        title: string;
+        imdb: string;
+        spotify: string;
+        runtime: number;
+        year: number;
+        poster: { childImageSharp: { fixed: FixedObject } };
+        locations: MarkerProps[];
+        directors: { frontmatter: StaffItemProps }[];
+        actors: { frontmatter: StaffItemProps }[];
+      };
+      html: string;
+    };
+  };
+}
+
+const FilmPage = ({ data }: PageProps<FilmPageProps>) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
@@ -33,14 +55,14 @@ const Film = ({ data }) => {
       {frontmatter.directors && frontmatter.directors.length > 0 && (
         <Container>
           <h3>Directors</h3>
-          <Staff size={'small'} items={frontmatter.directors} />
+          <Staff items={frontmatter.directors} />
         </Container>
       )}
 
       {frontmatter.actors && frontmatter.actors.length > 0 && (
         <Container>
           <h3>Actors</h3>
-          <Staff size={'small'} items={frontmatter.actors} />
+          <Staff items={frontmatter.actors} />
         </Container>
       )}
 
@@ -49,21 +71,17 @@ const Film = ({ data }) => {
           <Container>
             <h3>Locations</h3>
           </Container>
-          <Map markers={frontmatter.locations} />
+          <LocationsMap markers={frontmatter.locations} />
         </>
       )}
     </Layout>
   );
 };
 
-Film.propTypes = {
-  data: PropTypes.object,
-};
-
-export default Film;
+export default FilmPage;
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     file(childMarkdownRemark: { frontmatter: { id: { eq: $id } } }) {
       childMarkdownRemark {
         frontmatter {

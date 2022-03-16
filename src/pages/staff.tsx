@@ -1,26 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Staff from '../components/staff/Staff';
-import Container from '../components/Container';
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/SEO';
+import { Staff } from '../components/staff/Staff';
+import { Container } from '../components/Container';
+import { StaffItemProps } from '../components/staff/definitions';
 
-const IndexPage = ({ data }) => (
+interface SraffPageProps {
+  allFile: {
+    edges: {
+      node: {
+        childMarkdownRemark: { frontmatter: StaffItemProps };
+      };
+    }[];
+  };
+}
+
+const StaffPage = ({ data }: PageProps<SraffPageProps>) => (
   <Layout>
     <SEO title="Home" />
     <Container>
-      <Staff items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
+      <Staff
+        items={data.allFile.edges.map((x) => x.node.childMarkdownRemark)}
+      />
     </Container>
   </Layout>
 );
 
-IndexPage.propTypes = {
-  data: PropTypes.object,
-};
-
-export default IndexPage;
+export default StaffPage;
 
 export const query = graphql`
   query {

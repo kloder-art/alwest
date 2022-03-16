@@ -1,5 +1,5 @@
+import * as React from 'react';
 import { Link } from 'gatsby';
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledMenu = styled.ul`
@@ -19,7 +19,7 @@ const StyledMenu = styled.ul`
   }
 `;
 
-const Menu = () => (
+export const Menu = () => (
   <StyledMenu>
     <li>
       <Link to="/film" activeClassName={'active'} partiallyActive={true}>
@@ -38,5 +38,3 @@ const Menu = () => (
     </li>
   </StyledMenu>
 );
-
-export default Menu;

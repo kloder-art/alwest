@@ -1,24 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { graphql } from 'gatsby';
+import type { PageProps } from 'gatsby';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Films from '../components/films/Films';
-import Container from '../components/Container';
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/SEO';
+import { Films } from '../components/films/Films';
+import { Container } from '../components/Container';
+import { FilmProps } from '../components/films/definitions';
 
-const FilmsPage = ({ data }) => (
+interface FilmsPageProps {
+  allFile: {
+    edges: { node: { childMarkdownRemark: { frontmatter: FilmProps } } }[];
+  };
+}
+
+const FilmsPage = ({ data }: PageProps<FilmsPageProps>) => (
   <Layout>
     <SEO title="Films" />
     <Container>
-      <Films items={data.allFile.edges.map(x => x.node.childMarkdownRemark)} />
+      <Films
+        items={data.allFile.edges.map((x) => x.node.childMarkdownRemark)}
+      />
     </Container>
   </Layout>
 );
-
-FilmsPage.propTypes = {
-  data: PropTypes.object,
-};
 
 export default FilmsPage;
 

@@ -1,12 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import Img from 'gatsby-image/withIEPolyfill';
+import { FluidObject } from 'gatsby-image';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const LocationSlider = ({ images }) => (
+interface Image {
+  childImageSharp: {
+    fluid: FluidObject;
+  };
+  name: string;
+}
+
+interface LocationSliderProps {
+  images: Image[];
+}
+
+export const LocationSlider: React.FC<LocationSliderProps> = ({ images }) => (
   <>
     <Slider
       dots={true}
@@ -27,9 +38,3 @@ const LocationSlider = ({ images }) => (
     <div style={{ marginBottom: '1rem' }} />
   </>
 );
-
-LocationSlider.propTypes = {
-  images: PropTypes.array,
-};
-
-export default LocationSlider;

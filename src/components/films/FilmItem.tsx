@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
+
+import { FilmProps } from './definitions';
 
 const StyledFilmItem = styled.div`
   border-radius: 0.5rem;
@@ -10,7 +11,7 @@ const StyledFilmItem = styled.div`
   height: 230px;
 `;
 
-const FilmItem = ({ id, title, poster }) => (
+export const FilmItem: React.FC<FilmProps> = ({ id, title, poster }) => (
   <StyledFilmItem>
     <Link to={`/film/${id}`}>
       <Img
@@ -22,11 +23,3 @@ const FilmItem = ({ id, title, poster }) => (
     </Link>
   </StyledFilmItem>
 );
-
-FilmItem.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  poster: PropTypes.object,
-};
-
-export default FilmItem;

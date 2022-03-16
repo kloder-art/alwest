@@ -1,22 +1,43 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 
-import Layout from '../components/Layout';
-import Map from '../components/locations/Map';
-import Staff from '../components/staff/Staff';
-import Films from '../components/films/Films';
-import Slider from '../components/locations/Slider';
-import SEO from '../components/SEO';
-import Meta from '../components/Meta';
-import Container from '../components/Container';
+import { Layout } from '../components/Layout';
+import { LocationsMap } from '../components/locations/LocationsMap';
+import { Staff } from '../components/staff/Staff';
+import { Films } from '../components/films/Films';
+import { LocationSlider } from '../components/locations/LocationSlider';
+import { SEO } from '../components/SEO';
+import { Meta } from '../components/Meta';
+import { Container } from '../components/Container';
+import { StaffItemProps } from '../components/staff/definitions';
+import { FilmProps } from '../components/films/definitions';
+import { FluidObject } from 'gatsby-image';
 
-const Location = ({ data }) => {
+interface LocationPageProps {
+  file: {
+    childMarkdownRemark: {
+      frontmatter: {
+        id: string;
+        name: string;
+        lat: number;
+        lon: number;
+        wikipedia: string;
+        images: { childImageSharp: { fluid: FluidObject }; name: string }[];
+        films: { frontmatter: FilmProps }[];
+        directors: { frontmatter: StaffItemProps }[];
+        actors: { frontmatter: StaffItemProps }[];
+      };
+      html: string;
+    };
+  };
+}
+
+const LocationPage = ({ data }: PageProps<LocationPageProps>) => {
   const { frontmatter, html } = data.file.childMarkdownRemark;
   return (
     <Layout>
       <SEO title={frontmatter.name} />
-      <Slider images={frontmatter.images} />
+      <LocationSlider images={frontmatter.images} />
 
       <Container>
         <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
@@ -25,40 +46,36 @@ const Location = ({ data }) => {
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
 
-      <Map popups={false} markers={[{ frontmatter }]} />
+      <LocationsMap popups={false} markers={[{ frontmatter }]} />
 
       {frontmatter.films && frontmatter.films.length > 0 && (
         <Container>
           <h3>Films</h3>
-          <Films size={'small'} items={frontmatter.films} />
+          <Films items={frontmatter.films} />
         </Container>
       )}
 
       {frontmatter.directors && frontmatter.directors.length > 0 && (
         <Container>
           <h3>Directors</h3>
-          <Staff size={'small'} items={frontmatter.directors} />
+          <Staff items={frontmatter.directors} />
         </Container>
       )}
 
       {frontmatter.actors && frontmatter.actors.length > 0 && (
         <Container>
           <h3>Actors</h3>
-          <Staff size={'small'} items={frontmatter.actors} />
+          <Staff items={frontmatter.actors} />
         </Container>
       )}
     </Layout>
   );
 };
 
-Location.propTypes = {
-  data: PropTypes.object,
-};
-
-export default Location;
+export default LocationPage;
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     file(childMarkdownRemark: { frontmatter: { id: { eq: $id } } }) {
       childMarkdownRemark {
         frontmatter {

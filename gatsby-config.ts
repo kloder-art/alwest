@@ -1,4 +1,8 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+import path from 'path';
+
+const config: GatsbyConfig = {
   pathPrefix: '/alwest',
   siteMetadata: {
     title: 'AlWest',
@@ -45,21 +49,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'film',
-        path: `${__dirname}/data/films/`,
+        path: path.resolve('data/films/'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'location',
-        path: `${__dirname}/data/locations/`,
+        path: path.resolve('data/locations/'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'staff',
-        path: `${__dirname}/data/staff/`,
+        path: path.resolve('data/staff/'),
       },
     },
     {
@@ -77,3 +81,5 @@ module.exports = {
     'gatsby-plugin-offline',
   ],
 };
+
+export default config;

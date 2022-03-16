@@ -9,22 +9,26 @@ jobs:
   cicd:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: checkout
       uses: actions/checkout@v2
 
-    - name: Setup node 14.x
+    - name: setup node 14.x
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
     
-    - name: Install
+    - name: install
       run: npm ci
 
-    - name: Build
+    - name: tests
+      if: success()
+      run: npm run eslint && npm test
+
+    - name: build
       if: success()
       run: npm run build
 
-    - name: Deploy
+    - name: deploy
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:

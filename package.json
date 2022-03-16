@@ -56,8 +56,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "eslint": "eslint 'src/**/*.js'"
+    "test": "tsc --noEmit",
+    "eslint": "eslint 'src/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",

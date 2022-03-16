@@ -1,9 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
-  margin: 1rem 1rem;
-`;
+import { StyledFooter } from './StyledFooter';
 
 interface LayoutProps {
   siteTitle: string;

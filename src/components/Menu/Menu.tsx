@@ -1,23 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 
-const StyledMenu = styled.ul`
-  list-style: none;
-  margin: 0;
-
-  li {
-    display: inline-block;
-    margin-right: 16px;
-
-    a {
-      text-decoration: none;
-    }
-    a.active {
-      font-weight: bold;
-    }
-  }
-`;
+import { StyledMenu } from './StyledMenu';
 
 export const Menu = () => (
   <StyledMenu>

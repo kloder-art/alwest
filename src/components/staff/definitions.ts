@@ -1,10 +1,10 @@
-import { FixedObject } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface StaffItemProps {
   id: string;
   picture: {
     childImageSharp: {
-      fixed: FixedObject;
+      gatsbyImageData: IGatsbyImageData;
     };
   };
   name?: string;

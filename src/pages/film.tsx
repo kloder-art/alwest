@@ -28,7 +28,7 @@ const FilmsPage = ({ data }: PageProps<FilmsPageProps>) => (
 export default FilmsPage;
 
 export const query = graphql`
-  query {
+  {
     allFile(
       filter: { sourceInstanceName: { eq: "film" }, extension: { eq: "md" } }
       sort: { fields: childMarkdownRemark___frontmatter___year, order: DESC }
@@ -41,9 +41,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  fixed(width: 150, height: 230) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 230, layout: FIXED)
                 }
               }
             }

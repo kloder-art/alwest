@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Img from 'gatsby-image/withIEPolyfill';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Layout } from '../components/Layout';
 import { LocationsMap } from '../components/locations/LocationsMap';
@@ -8,7 +8,6 @@ import { Staff } from '../components/staff/Staff';
 import { Meta } from '../components/Meta';
 import { SEO } from '../components/SEO';
 import { Container } from '../components/Container';
-import { FixedObject } from 'gatsby-image';
 import { MarkerProps } from '../components/locations/definitions';
 import { StaffItemProps } from '../components/staff/definitions';
 
@@ -22,7 +21,7 @@ interface FilmPageProps {
         spotify: string;
         runtime: number;
         year: number;
-        poster: { childImageSharp: { fixed: FixedObject } };
+        poster: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
         locations: MarkerProps[];
         directors: { frontmatter: StaffItemProps }[];
         actors: { frontmatter: StaffItemProps }[];
@@ -41,8 +40,8 @@ const FilmPage = ({ data }: PageProps<FilmPageProps>) => {
         <h2 style={{ marginBottom: 0 }}>{frontmatter.title}</h2>
         <Meta frontmatter={frontmatter} />
 
-        <Img
-          fixed={frontmatter.poster.childImageSharp.fixed}
+        <GatsbyImage
+          image={frontmatter.poster.childImageSharp.gatsbyImageData}
           objectFit={'cover'}
           objectPosition={'50% 50%'}
           alt={frontmatter.title}
@@ -93,9 +92,7 @@ export const query = graphql`
           year
           poster {
             childImageSharp {
-              fixed(width: 210, height: 320) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(width: 210, height: 320, layout: FIXED)
             }
           }
           locations {
@@ -113,9 +110,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  fixed(width: 150, height: 220) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 220, layout: FIXED)
                 }
               }
             }
@@ -126,9 +121,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  fixed(width: 150, height: 220) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 220, layout: FIXED)
                 }
               }
             }

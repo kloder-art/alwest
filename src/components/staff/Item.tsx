@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image/withIEPolyfill';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { StaffItemProps } from './definitions';
 
@@ -24,8 +24,8 @@ const StyledItem = styled.div`
 export const Item: React.FC<StaffItemProps> = ({ id, picture, name = '' }) => (
   <StyledItem>
     <Link to={`/staff/${id}`}>
-      <Img
-        fixed={picture.childImageSharp.fixed}
+      <GatsbyImage
+        image={picture.childImageSharp.gatsbyImageData}
         objectFit={'cover'}
         objectPosition={'50% 50%'}
         alt={`"${name}" Photo`}

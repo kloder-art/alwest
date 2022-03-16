@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Img from 'gatsby-image/withIEPolyfill';
-import { FixedObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Layout } from '../components/Layout';
 import { Films } from '../components/films/Films';
@@ -20,7 +19,7 @@ interface LocationPageProps {
         name: string;
         born: string;
         imdb: string;
-        picture: { childImageSharp: { fixed: FixedObject } };
+        picture: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
         director: { frontmatter: FilmProps }[];
         actor: { frontmatter: FilmProps }[];
         locations: MarkerProps[];
@@ -39,8 +38,8 @@ const StaffPage = ({ data }: PageProps<LocationPageProps>) => {
         <h2 style={{ marginBottom: 0 }}>{frontmatter.name}</h2>
         <Meta frontmatter={frontmatter} />
 
-        <Img
-          fixed={frontmatter.picture.childImageSharp.fixed}
+        <GatsbyImage
+          image={frontmatter.picture.childImageSharp.gatsbyImageData}
           objectFit={'cover'}
           objectPosition={'50% 50%'}
           alt={frontmatter.name}
@@ -89,9 +88,7 @@ export const query = graphql`
           imdb
           picture {
             childImageSharp {
-              fixed(width: 210, height: 320) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(width: 210, height: 320, layout: FIXED)
             }
           }
           director {
@@ -100,9 +97,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  fixed(width: 150, height: 230) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 230, layout: FIXED)
                 }
               }
             }
@@ -113,9 +108,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  fixed(width: 150, height: 230) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 230, layout: FIXED)
                 }
               }
             }

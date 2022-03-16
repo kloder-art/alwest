@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image/withIEPolyfill';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { FilmProps } from './definitions';
 
@@ -14,8 +14,8 @@ const StyledFilmItem = styled.div`
 export const FilmItem: React.FC<FilmProps> = ({ id, title, poster }) => (
   <StyledFilmItem>
     <Link to={`/film/${id}`}>
-      <Img
-        fixed={poster.childImageSharp.fixed}
+      <GatsbyImage
+        image={poster.childImageSharp.gatsbyImageData}
         objectFit={'cover'}
         objectPosition={'50% 50%'}
         alt={`"${title}" Poster`}

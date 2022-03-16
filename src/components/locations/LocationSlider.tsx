@@ -1,14 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
-import Img from 'gatsby-image/withIEPolyfill';
-import { FluidObject } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 interface Image {
   childImageSharp: {
-    fluid: FluidObject;
+    gatsbyImageData: IGatsbyImageData;
   };
   name: string;
 }
@@ -30,7 +29,10 @@ export const LocationSlider: React.FC<LocationSliderProps> = ({ images }) => (
       {images.map((image, idx) => {
         return (
           <div key={idx}>
-            <Img fluid={image.childImageSharp.fluid} alt={image.name} />
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
+              alt={image.name}
+            />
           </div>
         );
       })}

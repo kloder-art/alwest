@@ -43,8 +43,9 @@ const config: GatsbyConfig = {
         plugins: ['gatsby-remark-embedder'],
       },
     },
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

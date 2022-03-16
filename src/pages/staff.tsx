@@ -31,7 +31,7 @@ const StaffPage = ({ data }: PageProps<SraffPageProps>) => (
 export default StaffPage;
 
 export const query = graphql`
-  query {
+  {
     allFile(
       filter: { sourceInstanceName: { eq: "staff" }, extension: { eq: "md" } }
       sort: { fields: [childMarkdownRemark___frontmatter___name], order: ASC }
@@ -44,9 +44,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  fixed(width: 150, height: 220) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 220, layout: FIXED)
                 }
               }
             }

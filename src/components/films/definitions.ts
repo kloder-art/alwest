@@ -1,11 +1,9 @@
-import { FixedObject } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface FilmProps {
   id: string;
   title: string;
   poster: {
-    childImageSharp: {
-      fixed: FixedObject;
-    };
+    childImageSharp: { gatsbyImageData: IGatsbyImageData };
   };
 }

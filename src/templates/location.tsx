@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Layout } from '../components/Layout';
 import { LocationsMap } from '../components/locations/LocationsMap';
@@ -11,7 +12,6 @@ import { Meta } from '../components/Meta';
 import { Container } from '../components/Container';
 import { StaffItemProps } from '../components/staff/definitions';
 import { FilmProps } from '../components/films/definitions';
-import { FluidObject } from 'gatsby-image';
 
 interface LocationPageProps {
   file: {
@@ -22,7 +22,10 @@ interface LocationPageProps {
         lat: number;
         lon: number;
         wikipedia: string;
-        images: { childImageSharp: { fluid: FluidObject }; name: string }[];
+        images: {
+          childImageSharp: { gatsbyImageData: IGatsbyImageData };
+          name: string;
+        }[];
         films: { frontmatter: FilmProps }[];
         directors: { frontmatter: StaffItemProps }[];
         actors: { frontmatter: StaffItemProps }[];
@@ -86,9 +89,7 @@ export const query = graphql`
           wikipedia
           images {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           films {
@@ -97,9 +98,7 @@ export const query = graphql`
               title
               poster {
                 childImageSharp {
-                  fixed(width: 150, height: 230) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 230, layout: FIXED)
                 }
               }
             }
@@ -110,9 +109,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  fixed(width: 150, height: 220) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 220, layout: FIXED)
                 }
               }
             }
@@ -123,9 +120,7 @@ export const query = graphql`
               name
               picture {
                 childImageSharp {
-                  fixed(width: 150, height: 220) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 150, height: 220, layout: FIXED)
                 }
               }
             }

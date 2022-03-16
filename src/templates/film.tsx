@@ -88,6 +88,7 @@ export const query = graphql`
           title
           imdb
           spotify
+          justwatch
           runtime
           year
           poster {

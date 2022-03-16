@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkalwest=self.webpackChunkalwest||[]).push([[691],{8308:function(e,n,t){t.r(n);var u=t(7294),f=t(1597);n.default=function(){return(0,u.useEffect)((function(){(0,f.navigate)("/film")})),null}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-321bbe846b80984ed584.js.map
